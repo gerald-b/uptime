@@ -40,6 +40,12 @@ namespace uptime
             output += ts.Days;
             output += " days, ";
             output += ts.ToString("hh\\:mm");
+            if (showStartTimeStamp)
+            {
+                output += Environment.NewLine;
+                output += "Start Timestamp: ";
+                output += startupDate.ToString("dd.MM.yyyy HH:mm:ss");
+            }
             Console.WriteLine(output);
         }
     }
