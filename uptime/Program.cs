@@ -22,6 +22,7 @@ namespace uptime
         static void Main(string[] args)
         {
             Boolean startGui = false;
+            Boolean showStartTimeStamp = false;
  
             foreach(String arg in args)
             {
@@ -29,9 +30,15 @@ namespace uptime
                 {
                     startGui = true;
                 }
+                if (arg.ToUpper().Equals("--SHOW-STARTUP-TIMESTAMP"))
+                {
+                    showStartTimeStamp = true;
+                }
             }
 
             TimeSpan ts = GetUpTime();
+            DateTime startupDate = DateTime.Now.Subtract(ts);
+
             String output = String.Empty;
             output += "At ";
             output += DateTime.Now.ToString("dd.MM.yyyy HH:mm:ss");
@@ -39,6 +46,12 @@ namespace uptime
             output += ts.Days;
             output += " days, ";
             output += ts.ToString("hh\\:mm");
+            if (showStartTimeStamp)
+            {
+                output += Environment.NewLine;
+                output += "Start Timestamp: ";
+                output += startupDate.ToString("dd.MM.yyyy HH:mm:ss");
+            }
             if (startGui)
             {
                 MessageBox.Show(output, "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
