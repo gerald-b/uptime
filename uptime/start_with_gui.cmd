@@ -1,2 +1,2 @@
-﻿
-%cd%\uptime.exe --gui
+﻿@echo off
+start "UPTIME" /MIN %cd%\uptime.exe --gui
