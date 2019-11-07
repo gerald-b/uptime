@@ -1,0 +1,38 @@
+variables:
+    GIT_SUBMODULE_STRATEGY: recursive
+    OUTPUT_DIR: "D:\\deploy\\"
+    NUGETCLI: "D:\\tools\\nuget.exe"
+    
+stages:
+    - deploy
+
+# Clearen the Output-Directory
+mkclear:
+    stage: deploy
+    script: 
+        - IF EXIST %OUTPUT_DIR%%CI_PROJECT_NAME% del /f /q /s %OUTPUT_DIR%%CI_PROJECT_NAME%
+    tags:
+        - build
+    only:
+        - tags
+        - web
+
+# Erstellen des Projekts
+mkcreate:
+    stage: deploy
+    script: 
+#       Create the Project with all Submodules.
+        - call "C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\Tools\VsDevCmd.bat"
+        - IF EXIST %NUGETCLI% %NUGETCLI% restore %CI_PROJECT_NAME%.sln
+        - msbuild %CI_PROJECT_DIR%\%CI_PROJECT_NAME%.sln /t:Clean,Build /p:Configuration=Release
+#       Create the output-dir if necessary
+        - IF NOT EXIST %OUTPUT_DIR%%CI_PROJECT_NAME% mkdir %OUTPUT_DIR%%CI_PROJECT_NAME%
+#       Copy of relevant Files
+        - IF EXIST %cd%\%CI_PROJECT_NAME%\bin\Release\*.exe copy %cd%\%CI_PROJECT_NAME%\bin\Release\*.exe %OUTPUT_DIR%%CI_PROJECT_NAME%
+        - IF EXIST %cd%\%CI_PROJECT_NAME%\bin\Release\*.dll copy %cd%\%CI_PROJECT_NAME%\bin\Release\*.dll %OUTPUT_DIR%%CI_PROJECT_NAME%
+        
+    tags:
+        - build
+    only:
+        - tags
+        - web
