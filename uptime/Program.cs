@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using System.Runtime.InteropServices;
+using System.Windows.Forms;
 
 namespace uptime
 {
@@ -20,6 +21,16 @@ namespace uptime
 
         static void Main(string[] args)
         {
+            Boolean startGui = false;
+ 
+            foreach(String arg in args)
+            {
+                if (arg.ToUpper().Equals("--GUI"))
+                {
+                    startGui = true;
+                }
+            }
+
             TimeSpan ts = GetUpTime();
             String output = String.Empty;
             output += "At ";
@@ -28,7 +39,14 @@ namespace uptime
             output += ts.Days;
             output += " days, ";
             output += ts.ToString("hh\\:mm");
-            Console.WriteLine(output);
+            if (startGui)
+            {
+                MessageBox.Show(output, "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                Console.WriteLine(output);
+            }
         }
     }
 }
