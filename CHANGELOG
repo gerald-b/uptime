@@ -3,6 +3,11 @@
 + new function
 i Info
 
+1.1.0.0
++ CLI Param --gui 
+i it brings up an Messagebox
++ CLI param --show-startup-timestamp
+i it calculates the startup-timestamp an put it to the selected output
 
 1.0.0.0
 i Program created 
