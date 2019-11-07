@@ -21,6 +21,8 @@ namespace uptime
         static void Main(string[] args)
         {
             TimeSpan ts = GetUpTime();
+            DateTime startupDate = DateTime.Now.Subtract(ts);
+
             String output = String.Empty;
             output += "At ";
             output += DateTime.Now.ToString("dd.MM.yyyy HH:mm:ss");
