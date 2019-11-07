@@ -20,6 +20,16 @@ namespace uptime
 
         static void Main(string[] args)
         {
+            Boolean showStartTimeStamp = false;
+
+            foreach (String arg in args)
+            {
+                if (arg.ToUpper().Equals("--SHOW-STARTUP-TIMESTAMP"))
+                {
+                    showStartTimeStamp = true;
+                }
+            }
+
             TimeSpan ts = GetUpTime();
             DateTime startupDate = DateTime.Now.Subtract(ts);
 
