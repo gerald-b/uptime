@@ -15,5 +15,10 @@ namespace uptime
         {
             myAssembly = Assembly.GetCallingAssembly();
         }
+
+        public String getVersion()
+        {
+            return myAssembly.GetName().Version.ToString();
+        }
     }
 }
