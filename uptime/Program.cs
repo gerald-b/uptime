@@ -26,6 +26,13 @@ namespace uptime
  
             foreach(String arg in args)
             {
+                if (arg.ToUpper().Equals("--VERSION") || 
+                    arg.ToUpper().Equals("-V")
+                    )
+                {
+                    Console.WriteLine("Version: function not implemented yet!");
+                    return;
+                }
                 if (arg.ToUpper().Equals("--GUI"))
                 {
                     startGui = true;
