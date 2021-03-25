@@ -20,5 +20,15 @@ namespace uptime
         {
             return myAssembly.GetName().Version.ToString();
         }
+
+        public string getCopyright()
+        {
+            object[] attribs = myAssembly.GetCustomAttributes(typeof(AssemblyCopyrightAttribute), true);
+            if (attribs.Count() > 0)
+            {
+                return ((AssemblyCopyrightAttribute)attribs[0]).Copyright;
+            }
+            return "Not Found";
+        }
     }
 }
