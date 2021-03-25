@@ -30,5 +30,15 @@ namespace uptime
             }
             return "Not Found";
         }
+
+        public string getCompany()
+        {
+            object[] attribs = myAssembly.GetCustomAttributes(typeof(AssemblyCompanyAttribute), true);
+            if (attribs.Count() > 0)
+            {
+                return ((AssemblyCompanyAttribute)attribs[0]).Company;
+            }
+            return "Not Found";
+        }
     }
 }
