@@ -26,6 +26,36 @@ namespace uptime
  
             foreach(String arg in args)
             {
+                if (arg.ToUpper().Equals("--VERSION") || 
+                    arg.ToUpper().Equals("-V")
+                    )
+                {
+                    ClsAbout about = new ClsAbout();
+
+                    Console.WriteLine(about.getProductName() +  " - v" + about.getVersion());
+                    Console.WriteLine("Author(s): " + about.getCompany());
+                    Console.WriteLine("License: " + about.getCopyright());
+                    Console.WriteLine("");
+
+                    return;
+                }
+                if (arg.ToUpper().Equals("--VERSIONGUI") ||
+                    arg.ToUpper().Equals("-VG")
+                    )
+                {
+                    ClsAbout about = new ClsAbout();
+
+                    String msg = String.Empty;
+                    msg += about.getProductName() + " - v" + about.getVersion();
+                    msg += Environment.NewLine;
+                    msg += "Author(s): " + about.getCompany();
+                    msg += Environment.NewLine;
+                    msg += "License: " + about.getCopyright();
+                    MessageBox.Show(msg, "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    return;
+                }
+
                 if (arg.ToUpper().Equals("--GUI"))
                 {
                     startGui = true;
