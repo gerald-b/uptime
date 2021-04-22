@@ -3,6 +3,12 @@
 + new function
 i Info
 
+1.2.0.0 (22.04.2021)
++ CLI Param --version
+i   it shows the assebly version on cli
++ CLI Param --versiongui
+i   it shows the assebly version in a Messagebox
+
 1.1.0.0
 + CLI Param --gui 
 i it brings up an Messagebox
