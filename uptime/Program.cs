@@ -56,6 +56,12 @@ namespace uptime
                     return;
                 }
 
+                if (arg.ToUpper().Equals("--HELP") ||
+                    arg.ToUpper().Equals("-H")
+                {
+
+                }
+
                 if (arg.ToUpper().Equals("--GUI"))
                 {
                     startGui = true;
