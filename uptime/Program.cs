@@ -57,7 +57,7 @@ namespace uptime
                 }
 
                 if (arg.ToUpper().Equals("--HELP") ||
-                    arg.ToUpper().Equals("-H")
+                    arg.ToUpper().Equals("-H"))
                 {
 
                 }
