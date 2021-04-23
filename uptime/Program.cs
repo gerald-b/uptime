@@ -59,7 +59,7 @@ namespace uptime
                 if (arg.ToUpper().Equals("--HELP") ||
                     arg.ToUpper().Equals("-H"))
                 {
-
+                    String msg = getHelpTxt();
                 }
 
                 if (arg.ToUpper().Equals("--GUI"))
@@ -96,6 +96,11 @@ namespace uptime
             {
                 Console.WriteLine(output);
             }
+        }
+
+        private static string getHelpTxt()
+        {
+            throw new NotImplementedException();
         }
     }
 }
