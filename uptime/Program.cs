@@ -66,7 +66,10 @@ namespace uptime
 
                 if (arg.ToUpper().Equals("--HELPGUI") ||
                     arg.ToUpper().Equals("-HG"))
-                { 
+                {
+                    String msg = getHelpTxt();
+                    MessageBox.Show(msg, "HELP", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
                 }
 
                 if (arg.ToUpper().Equals("--GUI"))
