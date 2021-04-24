@@ -60,6 +60,8 @@ namespace uptime
                     arg.ToUpper().Equals("-H"))
                 {
                     String msg = getHelpTxt();
+                    Console.WriteLine(msg);
+                    return;
                 }
 
                 if (arg.ToUpper().Equals("--GUI"))
