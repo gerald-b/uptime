@@ -100,7 +100,27 @@ namespace uptime
 
         private static string getHelpTxt()
         {
-            throw new NotImplementedException();
+            String txt = String.Empty;
+            txt += Environment.NewLine + "uptime [--gui][--show-startup-timestamp][-h/--help] ";
+            txt += Environment.NewLine;
+            txt += Environment.NewLine + "-h\t\tShows this help-page";
+            txt += Environment.NewLine + "--help";
+            txt += Environment.NewLine;
+            txt += Environment.NewLine + "--gui\t\tShows the uptime in an messagebox-";
+            txt += Environment.NewLine + "\t\twindow instead on CLI";
+            txt += Environment.NewLine;
+            txt += Environment.NewLine + "--show-startup-timestamp";
+            txt += Environment.NewLine + "\t\tShows the timestamp from Startup.";
+            txt += Environment.NewLine + "\t\tCan be used on CLI or with --gui";
+            txt += Environment.NewLine;
+            txt += Environment.NewLine + "-v\t\tShows the version, author and ";
+            txt += Environment.NewLine + "--version\t\tthe license information";
+            txt += Environment.NewLine;
+            txt += Environment.NewLine + "-vg\t\tLike -v but put the information";
+            txt += Environment.NewLine + "--versiongui\ton an messagebox-window";
+            txt += Environment.NewLine + "\t\tinstead on CLI";
+            txt += Environment.NewLine; 
+            return txt;
         }
     }
 }
