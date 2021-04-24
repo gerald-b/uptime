@@ -3,6 +3,13 @@
 + new function
 i Info
 
+1.3.0.0 (24.04.2021)
++ CLI Param --help & --helpgui
+i   it shows the parameters on cli or in a Messagebox
+~ show_version update the workflow (add new method)
+i   No visual change for the user.
+
+
 1.2.0.0 (22.04.2021)
 + CLI Param --version
 i   it shows the assebly version on cli
