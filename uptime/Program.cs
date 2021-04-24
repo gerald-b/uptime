@@ -38,16 +38,8 @@ namespace uptime
                     arg.ToUpper().Equals("-VG")
                     )
                 {
-                    ClsAbout about = new ClsAbout();
-
-                    String msg = String.Empty;
-                    msg += about.getProductName() + " - v" + about.getVersion();
-                    msg += Environment.NewLine;
-                    msg += "Author(s): " + about.getCompany();
-                    msg += Environment.NewLine;
-                    msg += "License: " + about.getCopyright();
+                    String msg = getVersionTxt();
                     MessageBox.Show(msg, "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
                     return;
                 }
 
