@@ -30,29 +30,16 @@ namespace uptime
                     arg.ToUpper().Equals("-V")
                     )
                 {
-                    ClsAbout about = new ClsAbout();
-
-                    Console.WriteLine(about.getProductName() +  " - v" + about.getVersion());
-                    Console.WriteLine("Author(s): " + about.getCompany());
-                    Console.WriteLine("License: " + about.getCopyright());
-                    Console.WriteLine("");
-
+                    String msg = getVersionTxt();
+                    Console.WriteLine(msg);
                     return;
                 }
                 if (arg.ToUpper().Equals("--VERSIONGUI") ||
                     arg.ToUpper().Equals("-VG")
                     )
                 {
-                    ClsAbout about = new ClsAbout();
-
-                    String msg = String.Empty;
-                    msg += about.getProductName() + " - v" + about.getVersion();
-                    msg += Environment.NewLine;
-                    msg += "Author(s): " + about.getCompany();
-                    msg += Environment.NewLine;
-                    msg += "License: " + about.getCopyright();
+                    String msg = getVersionTxt();
                     MessageBox.Show(msg, "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
                     return;
                 }
 
@@ -134,6 +121,21 @@ namespace uptime
             txt += Environment.NewLine + "\t\tinstead on CLI";
             txt += Environment.NewLine; 
             return txt;
+		}
+		
+        private static string getVersionTxt()
+        {
+            ClsAbout about = new ClsAbout();
+
+            String msg = String.Empty;
+            msg += about.getProductName() + " - v" + about.getVersion();
+            msg += Environment.NewLine;
+            msg += "Author(s): " + about.getCompany();
+            msg += Environment.NewLine;
+            msg += "License: " + about.getCopyright();
+            msg += Environment.NewLine;
+
+            return msg;
         }
     }
 }
