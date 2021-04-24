@@ -31,7 +31,7 @@ mkcreate:
         - IF EXIST %cd%\%CI_PROJECT_NAME%\bin\Release\*.exe copy %cd%\%CI_PROJECT_NAME%\bin\Release\*.exe %OUTPUT_DIR%%CI_PROJECT_NAME%
         - IF EXIST %cd%\%CI_PROJECT_NAME%\bin\Release\*.dll copy %cd%\%CI_PROJECT_NAME%\bin\Release\*.dll %OUTPUT_DIR%%CI_PROJECT_NAME%
         - IF EXIST %cd%\%CI_PROJECT_NAME%\bin\Release\*.cmd copy %cd%\%CI_PROJECT_NAME%\bin\Release\*.cmd %OUTPUT_DIR%%CI_PROJECT_NAME%
-        - IF EXIST %cd%\%CI_PROJECT_NAME%\bin\Release\README* copy %cd%\%CI_PROJECT_NAME%\bin\Release\README* %OUTPUT_DIR%%CI_PROJECT_NAME%
+        - IF EXIST %cd%\%CI_PROJECT_NAME%\README* copy %cd%\%CI_PROJECT_NAME%\README* %OUTPUT_DIR%%CI_PROJECT_NAME%
         - IF EXIST %cd%\%CI_PROJECT_NAME%\bin\Release\LICENSE* copy %cd%\%CI_PROJECT_NAME%\bin\Release\LICENSE* %OUTPUT_DIR%%CI_PROJECT_NAME%
         
     tags:
