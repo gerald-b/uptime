@@ -115,6 +115,9 @@ namespace uptime
             txt += Environment.NewLine;
             txt += Environment.NewLine + "-h\t\tShows this help-page";
             txt += Environment.NewLine + "--help";
+            txt += Environment.NewLine; 
+            txt += Environment.NewLine + "-hg\t\tShows this help-page";
+            txt += Environment.NewLine + "--helpgui\ton an messagebox-window";
             txt += Environment.NewLine;
             txt += Environment.NewLine + "--gui\t\tShows the uptime in an messagebox-";
             txt += Environment.NewLine + "\t\twindow instead on CLI";
