@@ -30,6 +30,7 @@ namespace uptime
                     arg.ToUpper().Equals("-V")
                     )
                 {
+                    String msg = getVersionTxt();
                     ClsAbout about = new ClsAbout();
 
                     Console.WriteLine(about.getProductName() +  " - v" + about.getVersion());
@@ -90,6 +91,11 @@ namespace uptime
             {
                 Console.WriteLine(output);
             }
+        }
+
+        private static string getVersionTxt()
+        {
+            throw new NotImplementedException();
         }
     }
 }
