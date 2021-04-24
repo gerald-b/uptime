@@ -31,13 +31,7 @@ namespace uptime
                     )
                 {
                     String msg = getVersionTxt();
-                    ClsAbout about = new ClsAbout();
-
-                    Console.WriteLine(about.getProductName() +  " - v" + about.getVersion());
-                    Console.WriteLine("Author(s): " + about.getCompany());
-                    Console.WriteLine("License: " + about.getCopyright());
-                    Console.WriteLine("");
-
+                    Console.WriteLine(msg);
                     return;
                 }
                 if (arg.ToUpper().Equals("--VERSIONGUI") ||
